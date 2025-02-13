@@ -1,8 +1,12 @@
-# Start Redis server in the background
-redis-server redis.conf &
+redis-server search/redis.conf &
 echo "Started redis server at port 3101"
 
-# PORT=3001
-# HOST=127.0.0.1
+redis-server scraped_urls/redis.conf &
+echo "Started redis server at port 3102"
 
-# exec uvicorn main:app --host "$HOST" --port "$PORT" --forwarded-allow-ips '*' --reload # --reload-dir /Users/jethroestrada/Desktop/External_Projects/AI/chatbot/open-webui/backend/crewAI/apps/search_project/server/main.py
+redis-server ollama_models/redis.conf &
+echo "Started redis server at port 3103"
+
+redis-server local_search/redis.conf &
+echo "Started redis server at port 6380"
+# sh local_search/start.sh
