@@ -9,4 +9,4 @@ echo "Started redis server at port 3103"
 
 redis-server local_search/redis.conf &
 echo "Started redis server at port 6380"
-# sh local_search/start.sh
+sh local_search/start.sh
