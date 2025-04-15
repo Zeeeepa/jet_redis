@@ -1,0 +1,11 @@
+# docker compose -f docker-compose.searxng.yaml up -d
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8082:8080"
+      - "8080:8080"
+    volumes:
+      - ./searxng:/etc/searxng
+    restart: always

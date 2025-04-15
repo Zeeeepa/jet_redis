@@ -1,0 +1,102 @@
+# SearXNG settings
+
+use_default_settings:
+  engines:
+    keep_only:
+      - google
+      - bing
+      - brave
+      - bing
+      - yahoo
+      - duckduckgo
+
+general:
+  debug: false
+  instance_name: "SearXNG"
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "en"
+  formats:
+    - html
+    - json
+
+server:
+  # Is overwritten by ${SEARXNG_SECRET}
+  secret_key: "f9e603d4191caab069b021fa0568391a33c8a837b470892c64461b5dd12464f4"
+  limiter: true
+  image_proxy: true
+  port: 8082
+  bind_address: "0.0.0.0"
+  # public URL of the instance, to ensure correct inbound links. Is overwritten
+  # by ${SEARXNG_URL}.
+  # base_url: http://example.com/location
+
+redis:
+  # URL to connect redis database. Is overwritten by ${SEARXNG_REDIS_URL}.
+  url: unix:///Users/jethroestrada/redis/local_search/tmp/redis.sock?db=0
+  # url: redis://localhost:6380/0
+
+ui:
+  static_use_hash: true
+  default_locale: "en"
+
+# preferences:
+#   lock:
+#     - autocomplete
+#     - method
+
+enabled_plugins:
+  - "Hash plugin"
+  - "Self Information"
+  - "Tracker URL remover"
+  - "Ahmia blacklist"
+  # - 'Hostnames plugin'  # see 'hostnames' configuration below
+  # - 'Open Access DOI rewrite'
+
+# plugins:
+#   - only_show_green_results
+
+# hostnames:
+#   replace:
+#     '(.*\.)?youtube\.com$': 'invidious.example.com'
+#     '(.*\.)?youtu\.be$': 'invidious.example.com'
+#   remove:
+#     - '(.*\.)?facebook.com$'
+#   low_priority:
+#     - '(.*\.)?google\.com$'
+#   high_priority:
+#     - '(.*\.)?wikipedia.org$'
+
+engines:
+  - name: google
+    # engine: google
+    # language: en
+  - name: bing
+    # engine: bing
+  - name: brave
+    # engine: brave
+  - name: bing
+    # engine: bing
+  - name: yahoo
+    # engine: yahoo
+  - name: duckduckgo
+    # engine: duckduckgo
+#   - name: fdroid
+#     disabled: false
+#
+#   - name: apk mirror
+#     disabled: false
+#
+#   - name: mediathekviewweb
+#     categories: TV
+#     disabled: false
+#
+#   - name: invidious
+#     disabled: false
+#     base_url:
+#       - https://invidious.snopyta.org
+#       - https://invidious.tiekoetter.com
+#       - https://invidio.xamh.de
+#       - https://inv.riverside.rocks

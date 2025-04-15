@@ -1,5 +1,8 @@
+# Get the directory where the script is located
+FILE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Start Redis server in the background
-redis-server search/redis.conf &
+redis-server "${FILE_DIR}/redis.conf" &
 echo "Started redis server at port 3101"
 
 # PORT=3001
