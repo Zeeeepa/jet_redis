@@ -1,5 +1,5 @@
 # Start Redis server in the background
-redis-server redis.conf &
+redis-server search/redis.conf &
 echo "Started redis server at port 3101"
 
 # PORT=3001
