@@ -13,4 +13,5 @@ if [ "$(docker ps -aq -f name=^/${CONTAINER_NAME}$)" ]; then
 fi
 
 # Start Docker Compose services
+# docker compose -f "${FILE_DIR}/docker-compose.searxng.yaml" up -d
 docker-compose -f "${FILE_DIR}/docker-compose.searxng.yaml" up -d
