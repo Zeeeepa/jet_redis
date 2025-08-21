@@ -31,6 +31,6 @@ fi
 
 # Start Colima and wait for Docker to be ready
 colima start
-wait_for_docker
+# wait_for_docker
 docker-compose -f "${FILE_DIR}/docker-compose.searxng.yaml" up -d
 # docker compose -f "${FILE_DIR}/docker-compose.searxng.yaml" up -d
